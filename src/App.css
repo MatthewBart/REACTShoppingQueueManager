@@ -1,9 +1,14 @@
-.App {
-  text-align: center;
-}
 
-.queueHandler {
+
+.App{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+}
+.queues {
   display: grid;
   grid-template-columns: repeat(5,1fr);
   gap: 20px;
+
 }

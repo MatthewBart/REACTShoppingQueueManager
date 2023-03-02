@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
+import "./App.css";
 function App() {
   const [items,setItems] = useState(0);
-  const [queues,setQueues] = useState([[1,4,5],[1],[2],[3],[4]]);
+  const [queues,setQueues] = useState([[5],[1],[2],[3],[4]]);
 
   function addPersonToQueue(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
@@ -40,7 +40,9 @@ function App() {
     <div className = "queues">
       {queues.map((queue,idx)=>(
           <div className = "queue" key = {idx}>
-            {queue.map(items => (<div>{items}</div>))}
+
+            {queue.map(items => (<div>
+              {items}</div>))}
           </div>
 
         ))}
