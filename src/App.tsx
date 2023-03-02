@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./App.css";
 function App() {
   const [items,setItems] = useState(0);
@@ -25,6 +25,21 @@ function App() {
         queue === smallestQueue ?  [...queue, items] : queue));
 
   }
+
+  useEffect(()=>{
+    const interval = setInterval(() => {
+      setQueues(prevQueues => {
+        return prevQueues.map(queue => {
+          return [queue[0]-1, ...queue.slice(1)].filter((value)=> value>0)
+        })
+
+      })
+    }, 1000);
+
+    return ()=>{
+      clearInterval(interval);
+    };
+  },[]);
 
   return (
     <div className="App">

@@ -12,3 +12,7 @@
   gap: 20px;
 
 }
+
+.queue{
+  border: 1px dashed blue;
+}
