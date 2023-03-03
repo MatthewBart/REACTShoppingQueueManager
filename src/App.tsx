@@ -45,6 +45,7 @@ function App() {
     <div className="App">
       <form onSubmit={addPersonToQueue}>
        <input 
+        min="1"
         required
         type="number"
         value={items}
